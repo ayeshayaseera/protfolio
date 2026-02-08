@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #quiz-container {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      width: 400px;
+    }
+    h2 { margin-bottom: 20px; }
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 5px;
+      background: #007BFF;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover { background: #0056b3; }
+    #result { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div id="quiz-container">
+    <h2 id="question">Question Text</h2>
+    <div id="options"></div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What is the capital of France?",
+        options: ["Berlin", "Madrid", "Paris", "Rome"],
+        answer: "Paris"
+      },
+      {
+        question: "Which planet is known as the Red Planet?",
+        options: ["Earth", "Mars", "Jupiter", "Venus"],
+        answer: "Mars"
+      },
+      {
+        question: "Who wrote 'Hamlet'?",
+        options: ["Mark Twain", "William Shakespeare", "Leo Tolstoy", "J.K. Rowling"],
+        answer: "William Shakespeare"
+      },
+      {
+        question: "What is 5 + 7?",
+        options: ["10", "12", "13", "14"],
+        answer: "12"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById('question');
+    const optionsEl = document.getElementById('options');
+    const resultEl = document.getElementById('result');
+
+    function loadQuestion() {
+      const q = quizData[currentQuestion];
+      questionEl.textContent = q.question;
+      optionsEl.innerHTML = "";
+      q.options.forEach(option => {
+        const btn = document.createElement('button');
+        btn.textContent = option;
+        btn.onclick = () => checkAnswer(option);
+        optionsEl.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selected) {
+      const correct = quizData[currentQuestion].answer;
+      if(selected === correct) score++;
+      currentQuestion++;
+      if(currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      questionEl.textContent = "Quiz Completed!";
+      optionsEl.innerHTML = "";
+      resultEl.textContent = `Your score: ${score} / ${quizData.length}`;
+    }
+
+    // Start quiz
+    loadQuestion();
+  </script>
+</body>
+</html>

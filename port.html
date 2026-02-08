@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    /* Reset */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#0f172a;color:#e2e8f0;line-height:1.6;}
+
+    /* Navbar */
+    header{position:fixed;top:0;left:0;width:100%;background:rgba(15,23,42,0.8);backdrop-filter:blur(10px);z-index:1000;}
+    .navbar{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:15px 20px;}
+    .logo{font-size:1.5rem;font-weight:600;color:#38bdf8;}
+    .nav-links{display:flex;gap:20px;list-style:none;}
+    .nav-links a{text-decoration:none;color:#e2e8f0;transition:.3s;}
+    .nav-links a:hover{color:#38bdf8;}
+    .menu-toggle{display:none;font-size:26px;cursor:pointer;color:#38bdf8;}
+
+    /* Sections */
+    section{padding:100px 10%;}
+    h2{font-size:2rem;margin-bottom:20px;text-align:center;color:#38bdf8;}
+
+    /* Hero */
+    .home{height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding-top:80px;}
+    .home img{width:150px;height:150px;border-radius:50%;border:4px solid #38bdf8;margin-bottom:20px;}
+    .home h1{font-size:2.5rem;margin-bottom:10px;}
+    .typing{color:#38bdf8;font-weight:bold;}
+    .socials{margin-top:20px;display:flex;gap:15px;justify-content:center;}
+    .socials a{color:#38bdf8;font-size:22px;transition:.3s;}
+    .socials a:hover{color:#fff;}
+    .btn{display:inline-block;margin-top:15px;padding:10px 20px;background:#38bdf8;color:#0f172a;border-radius:25px;transition:.3s;text-decoration:none;font-weight:600;}
+    .btn:hover{background:#0ea5e9;color:#fff;}
+
+    /* About */
+    .about p{max-width:700px;margin:auto;font-size:1rem;color:#cbd5e1;text-align:center;}
+
+    /* Skills */
+    .skills-container{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;}
+    .skill{width:120px;height:120px;border-radius:50%;background:conic-gradient(#38bdf8 var(--percent),#1e293b 0);display:flex;justify-content:center;align-items:center;position:relative;}
+    .skill span{position:absolute;color:#fff;font-weight:600;}
+    .skill-label{text-align:center;margin-top:10px;color:#cbd5e1;}
+
+    /* Projects */
+    .project-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+    .project-card{background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);padding:20px;border-radius:15px;transition:.3s;cursor:pointer;}
+    .project-card:hover{transform:translateY(-8px);box-shadow:0 8px 20px rgba(0,0,0,.3);}
+    .project-card h3{margin-bottom:10px;color:#38bdf8;}
+    .project-card p{color:#cbd5e1;font-size:0.9rem;}
+
+    /* Contact */
+    form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+    input,textarea{padding:12px;border:none;border-radius:8px;background:#1e293b;color:#e2e8f0;}
+    textarea{resize:none;}
+    button{padding:12px;border:none;border-radius:8px;background:#38bdf8;color:#0f172a;font-weight:600;cursor:pointer;transition:.3s;}
+    button:hover{background:#0ea5e9;color:#fff;}
+
+    /* Footer */
+    footer{text-align:center;padding:20px;background:#0f172a;color:#64748b;font-size:.9rem;}
+
+    /* Responsive */
+    @media(max-width:768px){
+      .nav-links{display:none;flex-direction:column;position:absolute;top:60px;right:20px;background:#1e293b;padding:20px;border-radius:10px;}
+      .nav-links.active{display:flex;}
+      .menu-toggle{display:block;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Ayesha Yaseera</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">☰</div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="home">
+    <h1>Hi, I'm <span class="typing"></span></h1>
+    <p>Crafting clean, modern, and responsive web experiences.</p>
+    <div class="socials">
+      <a href="https://github.com/ayeshayaseera" target="_blank"></i>🐱</a>
+      <a href="https://www.linkedin.com/in/ayesha-yaseera-m-6454132bb" target="_blank"></i>💼</a>
+    </div>
+    <a href="cv3.pdf" class="btn" download>Download CV</a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I’m a creative web developer with a passion for modern design and functional code. I build professional websites that are fast, responsive, and user-friendly.</p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div>
+        <div class="skill" style="--percent:95%;"><span>95%</span></div>
+        <p class="skill-label">HTML</p>
+      </div>
+      <div>
+        <div class="skill" style="--percent:90%;"><span>90%</span></div>
+        <p class="skill-label">CSS</p>
+      </div>
+      <div>
+        <div class="skill" style="--percent:85%;"><span>85%</span></div>
+        <p class="skill-label">JavaScript</p>
+      </div>
+      <div>
+        <div class="skill" style="--percent:80%;"><span>80%</span></div>
+        <p class="skill-label">React</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-container">
+      <div class="project-card" onclick="window.open('music.html','_blank')"> 
+        <h3>Music Player</h3>
+        <p>HTML, CSS, JS project with play/pause, next/prev, progress bar, and volume control.</p>
+      </div>
+      <div class="project-card" onclick="window.open('alert.py','_blank')"> 
+        <h3>AI Drowsiness Detector</h3>
+        <p>Real-time detection system using facial landmark detection to monitor drowsiness and trigger alerts.</p>
+      </div>
+      <div class="project-card" onclick="window.open('quiz.html','_blank')"> 
+        <h3>Quiz App</h3>
+        <p>Interactive quiz application built using HTML, CSS, and JavaScript with scoring and responsive design.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="certifications">
+    <h2>Certifications</h2>
+    <div class="project-container">
+      <div class="project-card">
+        <h3>Fullstack Development</h3>
+        <p>HTML, CSS, JS, Node.js, Express, MongoDB, REST APIs, fullstack apps.</p>
+        <a href="fullstack.pdf" target="_blank" class="btn">View Certificate</a>
+      </div>
+      <div class="project-card">
+        <h3>Basics of Ethical Hacking</h3>
+        <p>Reconnaissance, vulnerability assessment, network scanning, web app security.</p>
+        <a href="ethical.pdf" target="_blank" class="btn">View Certificate</a>
+      </div>
+      <div class="project-card">
+        <h3>Java Programming</h3>
+        <p>Core Java, OOP, control structures, exception handling, basic file I/O.</p>
+        <a href="java.pdf" target="_blank" class="btn">View Certificate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" name=" from_name" required>
+      <input type="email" placeholder="Your Email" name="from_email" required>
+      <textarea placeholder="Your Message" name="message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="form-msg" style="text-align:center;margin-top:10px;color:#38bdf8;"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Ayesha Yaseera</p>
+  </footer>
+
+  <script>
+    // Typing Effect
+    const texts = ["Ayesha Yaseera","Web Developer","UI/UX Enthusiast","Problem Solver"];
+    let i=0,j=0,isDeleting=false;
+    function type(){
+      const current = texts[i];
+      const typingEl = document.querySelector(".typing");
+      typingEl.textContent = current.substring(0,j);
+      if(!isDeleting && j++ === current.length){isDeleting=true;setTimeout(type,1000);return;}
+      if(isDeleting && j-- ===0){isDeleting=false;i=(i+1)%texts.length;}
+      setTimeout(type,isDeleting?60:120);
+    }
+    type();
+
+    // Mobile Menu
+    const toggle=document.querySelector(".menu-toggle");
+    const nav=document.querySelector(".nav-links");
+    toggle.addEventListener("click",()=>{nav.classList.toggle("active");});
+
+    // Contact Form (EmailJS Integration)
+    const form = document.getElementById("contact-form");
+    const formMsg = document.getElementById("form-msg");
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      // Use EmailJS here (replace with your EmailJS IDs)
+      emailjs.sendForm('service_yektlut','template_yqylmgv',this,'JVW0ztu2C6sPrjiz7')
+      .then(() => {
+        formMsg.textContent = "Message sent successfully!";
+        form.reset();
+      })
+      .catch(err => {
+        formMsg.textContent = "Failed to send message. Try again.";
+        console.error(err);
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("JVW0ztu2C6sPrjiz7");
+  </script>
+</body>
+</html>
